@@ -1,65 +1,134 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Productivity Site</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Productivity Site</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    a.feature-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
+    a.feature-img:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    a.feature-img img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
 </head>
 
-<body>
+<body style="margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f0f8ff; color: #333;">
 
-  <div class="bottom-container">
-    <a class="footer-link" href="signup.html">Login In</a>
-    <a class="footer-link" href="signup.html">Sign Up</a>
-    <a class="footer-link" href="https://onedrive.live.com/edit.aspx?resid=208914362BF87D78!263&ithint=file%2cpptx&wdo=2&authkey=!AEC5zB_jCETB6pQ">About</a>
-    <p class="last">© Productivity Tracker .</p>
+  <!-- Top Bar -->
+  <div style="text-align: center; padding: 30px 20px; background-color: #333; color: white;">
+    <a href="signup.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">Login</a>
+    <a href="signup.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">Sign Up</a>
+    <a href="about.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">About</a>
+    <p style="margin-top: 10px; font-size: 14px;">© Productivity Tracker</p>
   </div>
 
-    <div class="main">
-        <h1> Productivity Tracker </h1>
-        <h2>Stop talking. Start doing</h2>
-        <img  class="bg" src="pro.jpg" alt="multi-tasking">
-    </div>
-    <div class="middle-container">
-        <div class="profile">
-            <img class="my-pic" src="mod.png" alt="Vedant's profile picture">
-          <h2>Productivity Tracker</h2>
-          <p class="intro">A productivity tracker is a tool or software that helps individuals or teams monitor and analyze their work habits, tasks, and progress towards their goals. </p>
-        </div>
-        <hr>
-        <div class="skills">
-          <h2>Features</h2>
-          <div class="skill-row1">
-            <img class="skill-one" src="todo.png" alt="">
-            <h3> <a class="footer-link" href="todolist.html"> To Do List </a> </h3>
-            <p>One of the most important reasons you should use a to do list is that it will help you stay organised as well as it helps you stay focused.</p>
-          </div>
-          <div class="skill-row2">
-            <img class="skill-two" src="pomo.png" >
-            <h3> <a class="footer-link" href="pomo.html"> Pomodoro </a> </h3>
-            <p>The Pomodoro Technique is a time management method based on 25-minute stretches of focused work broken by five-minute breaks. Longer breaks, typically 15 to 30 minutes, are taken after four consecutive work intervals.</p>
-            <div class="skill-row3">
-              <img class="skill-three" src="mynotes.png" alt="">
-              <h3> <a class="footer-link" href="nt.html">  My Notes </a> </h3>
-              <p>Note-taking is a tool for learning, business, and personal planning. Research proves various methods of note-taking help recall information better, remember more important ideas
-                </p>
-            </div>
-            <div class="skill-row4">
-              <img class="skill-four" src="nw.png" alt="">
-              <h3> <a class="footer-link" href="cal.html">  My calendar </a> </h3>
-              <p>The Smart Calendar marks important events through out the year,Plan your weekly schedule,keeping tracks of events,etc,</p>
-            </div>
-            
-        <hr>
-        <div class="contact-me">
-          <p1 class="contact-message">Website feedback helps to get actionable insights, opinions, and suggestions provided by users to improve the website's effectiveness. You're feedback is important to us and will be appreciated </p1>
-          <a class="btn" href="mailto:vedantjadhav575@gmail.com">Feedback</a>
-        </div>
-      </div>
-      
-</body>
+  <!-- Hero Section -->
+  <div style="text-align: center; padding: 40px;">
+    <h1 style="font-family: 'Sacramento', cursive; font-size: 48px; margin-bottom: 10px;">Productivity Tracker</h1>
+    <h2 style="font-family: 'Merriweather', serif; font-size: 24px; margin-bottom: 20px;">Stop talking. Start doing</h2>
+    <img src="pro.jpg" alt="multi-tasking" style="width: 80%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  </div>
 
+  <!-- Profile -->
+  <div style="padding: 40px; background-color: #ffffff;">
+    <div style="text-align: center;">
+      <img src="mod.png" alt="Profile" style="width: 150px; border-radius: 50%;">
+      <h2 style="margin-top: 20px;">Productivity Tracker</h2>
+      <p style="max-width: 700px; margin: 0 auto; font-size: 16px;">
+        A productivity tracker is a tool or software that helps individuals or teams monitor and analyze their work habits, tasks, and progress towards their goals.
+      </p>
+    </div>
+
+    <hr style="margin: 40px auto; width: 60%; border: 1px solid #ddd;">
+
+    <!-- Features -->
+    <div style="text-align: center;">
+      <h2 style="margin-bottom: 30px;">Features</h2>
+
+      <!-- Feature 1 -->
+      <div style="margin: 40px 0;">
+        <a href="todolist.html" class="feature-img" style="display: inline-block;">
+          <img src="todo.png" alt="To Do List" style="width: 100px;">
+        </a>
+        <h3>
+          <a href="todolist.html"
+             class="feature-btn"
+             style="display: inline-block; background-color: #4CAF50; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
+            ✅ To Do List
+          </a>
+        </h3>
+        <p style="max-width: 600px; margin: auto;">Stay organized and focused with an easy-to-manage to-do list.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div style="margin: 40px 0;">
+        <a href="pomo.html" class="feature-img" style="display: inline-block;">
+          <img src="pomo.png" alt="Pomodoro" style="width: 100px;">
+        </a>
+        <h3>
+          <a href="pomo.html"
+             class="feature-btn"
+             style="display: inline-block; background-color: #2196F3; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
+            ⏱️ Pomodoro
+          </a>
+        </h3>
+        <p style="max-width: 600px; margin: auto;">Use the Pomodoro Technique to break work into focused time blocks with refreshing breaks.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div style="margin: 40px 0;">
+        <a href="nt.html" class="feature-img" style="display: inline-block;">
+          <img src="mynotes.png" alt="My Notes" style="width: 100px;">
+        </a>
+        <h3>
+          <a href="nt.html"
+             class="feature-btn"
+             style="display: inline-block; background-color: #FF5722; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
+            📝 My Notes
+          </a>
+        </h3>
+        <p style="max-width: 600px; margin: auto;">Capture ideas, lessons, and tasks efficiently for better recall and planning.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div style="margin: 40px 0;">
+        <a href="cal.html" class="feature-img" style="display: inline-block;">
+          <img src="nw.png" alt="Calendar" style="width: 100px;">
+        </a>
+        <h3>
+          <a href="cal.html"
+             class="feature-btn"
+             style="display: inline-block; background-color: #FFC107; color: #212529; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
+            📅 My Calendar
+          </a>
+        </h3>
+        <p style="max-width: 600px; margin: auto;">Manage your schedule with reminders and planning tools.</p>
+      </div>
+    </div>
+
+    <hr style="margin: 40px auto; width: 60%; border: 1px solid #ddd;">
+
+    <!-- Contact -->
+    <div style="text-align: center;">
+      <p style="max-width: 700px; margin: 0 auto 20px;">We value your feedback! Help us improve this site by sharing your thoughts and suggestions.</p>
+      <a href="mailto:vedantjadhav575@gmail.com"
+         style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+         ✉️ Send Feedback
+      </a>
+    </div>
+  </div>
+
+</body>
 </html>
