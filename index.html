@@ -1,137 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Productivity Site</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    a.feature-btn:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.6;
     }
 
-    a.feature-img:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #212121;
+      color: white;
     }
 
-    a.feature-img img {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #FFD700;
+    }
+
+    /* Profile Section */
+    .profile {
+      max-width: 1000px;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .profile img {
+      width: 180px;
+      border-radius: 50%;
+      margin-right: 40px;
+      flex-shrink: 0;
+    }
+
+    .profile-content {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .profile-content h2 {
+      margin-top: 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .profile-content p {
+      font-size: 17px;
+      color: #555;
+    }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      background-color: #f7f9fb;
+    }
+
+    .feature-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 30px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .feature-card img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .feature-card .feature-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Feature Button Colors */
+    .btn-todo { background-color: #4CAF50; color: white; }
+    .btn-pomo { background-color: #2196F3; color: white; }
+    .btn-notes { background-color: #FF5722; color: white; }
+    .btn-cal { background-color: #FFC107; color: #212121; }
+
+    .btn-todo:hover { background-color: #43a047; }
+    .btn-pomo:hover { background-color: #1976d2; }
+    .btn-notes:hover { background-color: #e64a19; }
+    .btn-cal:hover { background-color: #ffb300; }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #212121;
+      color: white;
+    }
+
+    .contact p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .contact a:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile img {
+        margin: 0 0 20px;
+      }
+
+      .profile-content {
+        margin: 0;
+      }
     }
   </style>
 </head>
 
-<body style="margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f0f8ff; color: #333;">
+<body>
 
-  <!-- Top Bar -->
-  <div style="text-align: center; padding: 30px 20px; background-color: #333; color: white;">
-    <a href="signup.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">Login</a>
-    <a href="signup.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">Sign Up</a>
-    <a href="about.html" style="color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;">About</a>
-    <p style="margin-top: 10px; font-size: 14px;">© Productivity Tracker</p>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div><strong>Productivity Tracker</strong></div>
+    <div>
+      <a href="signup.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="about.html">About</a>
+    </div>
   </div>
 
-  <!-- Hero Section -->
-  <div style="text-align: center; padding: 40px;">
-    <h1 style="font-family: 'Sacramento', cursive; font-size: 48px; margin-bottom: 10px;">Productivity Tracker</h1>
-    <h2 style="font-family: 'Merriweather', serif; font-size: 24px; margin-bottom: 20px;">Stop talking. Start doing</h2>
-    <img src="pro.jpg" alt="multi-tasking" style="width: 80%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-  </div>
-
-  <!-- Profile -->
-  <div style="padding: 40px; background-color: #ffffff;">
-    <div style="text-align: center;">
-      <img src="mod.png" alt="Profile" style="width: 150px; border-radius: 50%;">
-      <h2 style="margin-top: 20px;">Productivity Tracker</h2>
-      <p style="max-width: 700px; margin: 0 auto; font-size: 16px;">
+  <!-- Profile Section -->
+  <div class="profile">
+    <img src="mod.png" alt="Profile" />
+    <div class="profile-content">
+      <h2>Welcome to Productivity Tracker</h2>
+      <p>
         A productivity tracker is a tool or software that helps individuals or teams monitor and analyze their work habits, tasks, and progress towards their goals.
+        Stay productive, organized, and focused with our easy-to-use tools below!
       </p>
     </div>
+  </div>
 
-    <hr style="margin: 40px auto; width: 60%; border: 1px solid #ddd;">
+  <!-- Features Section -->
+  <div class="features">
 
-    <!-- Features -->
-    <div style="text-align: center;">
-      <h2 style="margin-bottom: 30px;">Features</h2>
+    <a href="todolist.html" class="feature-card">
+      <img src="todo.png" alt="To Do List" />
+      <h3>✅ To Do List</h3>
+      <p>Stay organized and focused with an easy-to-manage to-do list.</p>
+      <div class="feature-btn btn-todo">Open To Do List</div>
+    </a>
 
-      <!-- Feature 1 -->
-      <div style="margin: 40px 0;">
-        <a href="todolist.html" class="feature-img" style="display: inline-block;">
-          <img src="todo.png" alt="To Do List" style="width: 100px;">
-        </a>
-        <h3>
-          <a href="todolist.html"
-             class="feature-btn"
-             style="display: inline-block; background-color: #4CAF50; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
-            ✅ To Do List
-          </a>
-        </h3>
-        <p style="max-width: 600px; margin: auto;">Organize your daily tasks efficiently by adding, deleting, and marking them as complete to stay focused and productive.
-Click on image or title to use feature.</p>
-      </div>
+    <a href="pomo.html" class="feature-card">
+      <img src="pomo.png" alt="Pomodoro" />
+      <h3>⏱️ Pomodoro</h3>
+      <p>Use the Pomodoro Technique to break work into focused time blocks with refreshing breaks.</p>
+      <div class="feature-btn btn-pomo">Open Pomodoro</div>
+    </a>
 
-      <!-- Feature 2 -->
-      <div style="margin: 40px 0;">
-        <a href="pomo.html" class="feature-img" style="display: inline-block;">
-          <img src="pomo.png" alt="Pomodoro" style="width: 100px;">
-        </a>
-        <h3>
-          <a href="pomo.html"
-             class="feature-btn"
-             style="display: inline-block; background-color: #2196F3; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
-            ⏱️ Pomodoro
-          </a>
-        </h3>
-        <p style="max-width: 600px; margin: auto;">Boost your focus using 25-minute work intervals followed by 5-minute breaks, helping you manage time effectively and avoid burnout.
-Click on image or title to use feature.</p>
-      </div>
+    <a href="nt.html" class="feature-card">
+      <img src="mynotes.png" alt="My Notes" />
+      <h3>📝 My Notes</h3>
+      <p>Capture ideas, lessons, and tasks efficiently for better recall and planning.</p>
+      <div class="feature-btn btn-notes">Open My Notes</div>
+    </a>
 
-      <!-- Feature 3 -->
-      <div style="margin: 40px 0;">
-        <a href="nt.html" class="feature-img" style="display: inline-block;">
-          <img src="mynotes.png" alt="My Notes" style="width: 100px;">
-        </a>
-        <h3>
-          <a href="nt.html"
-             class="feature-btn"
-             style="display: inline-block; background-color: #FF5722; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
-            📝 My Notes
-          </a>
-        </h3>
-        <p style="max-width: 600px; margin: auto;">Easily jot down important ideas, reminders, and information all in one place to keep your thoughts organized and accessible.
-Click on image or title to use feature.</p>
-      </div>
+    <a href="cal.html" class="feature-card">
+      <img src="nw.png" alt="Calendar" />
+      <h3>📅 My Calendar</h3>
+      <p>Manage your schedule with reminders and planning tools.</p>
+      <div class="feature-btn btn-cal">Open Calendar</div>
+    </a>
 
-      <!-- Feature 4 -->
-      <div style="margin: 40px 0;">
-        <a href="cal.html" class="feature-img" style="display: inline-block;">
-          <img src="nw.png" alt="Calendar" style="width: 100px;">
-        </a>
-        <h3>
-          <a href="cal.html"
-             class="feature-btn"
-             style="display: inline-block; background-color: #FFC107; color: #212529; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: bold; transition: all 0.3s;">
-            📅 My Calendar
-          </a>
-        </h3>
-        <p style="max-width: 600px; margin: auto;">Plan your schedule, keep track of important dates and deadlines, and organize events to manage your time better.
-Click on image or title to use feature.</p>
-      </div>
-    </div>
+  </div>
 
-    <hr style="margin: 40px auto; width: 60%; border: 1px solid #ddd;">
+  <!-- Contact Section -->
+  <div class="contact">
+    <p>We value your feedback! Help us improve this site by sharing your thoughts and suggestions.</p>
+    <a href="mailto:vedantjadhav575@gmail.com">✉️ Send Feedback</a>
+  </div>
 
-    <!-- Contact -->
-    <div style="text-align: center;">
-      <p style="max-width: 700px; margin: 0 auto 20px;">We value your feedback! Help us improve this site by sharing your thoughts and suggestions.</p>
-      <a href="mailto:vedantjadhav575@gmail.com"
-         style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-         ✉️ Send Feedback
-      </a>
-    </div>
+  <!-- Footer -->
+  <div class="footer">
+    © Productivity Tracker — All rights reserved.
   </div>
 
 </body>
