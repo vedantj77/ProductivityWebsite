@@ -4,7 +4,7 @@ A web-based productivity tool combining Pomodoro timer, to‑do list, quick note
 
 ## Demo (if deployed)
 
-[Live Demo] - vedantj77.github.io/ProductivityWebsite/
+[Live Demo] - https://vedantj77.github.io/ProductivityWebsite/
 
 ## features
 
